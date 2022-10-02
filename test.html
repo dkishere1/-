@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* html {
+            scroll-behavior: smooth;
+        } */
+
+      /* div {
+            width: 300px;
+            height: 300px;
+            border: 10px solid;
+            padding: 100px;
+            background-color: aqua;
+            
+        } */
+    </style>
+  </head>
+  <body>
+    <script>
+      //实例化ajax对象
+      let xhr = new XMLHttpRequest();
+      //设置请求方法和地址 get请求的数据直接添加在url后面 格式url?key=value
+      xhr.open(
+        "get",
+        "https://api.uomg.com/api/rand.music?sort=热歌榜&format=json"
+      );
+      // 发送请求 参数格式'key=value'
+      xhr.send();
+      // 注册回调函数
+      xhr.onload = function () {
+        console.log(this.responseText);
+      };
+    </script>
+  </body>
+</html>
